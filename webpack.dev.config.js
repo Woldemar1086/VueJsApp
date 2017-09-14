@@ -1,12 +1,12 @@
 const path =require('path');
 const webpack = require('webpack');
-const compressionPlugin = require('compresson-webpack-plugin');
+const compressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-	entry:{
-		'webpack-hot-moddleware/client',
+	entry:[
 		path.join(__dirname, '/src/app.js'),
-	},
+		'webpack-hot-moddleware/client'
+	],
 	output:{
 		path: path.resolve(__dirname, './dist'),
 		publicPath: '/dist/',
@@ -47,13 +47,13 @@ module.exports = {
 			'vue$':'vue/dist/vue.esm.js'
 		}
 	},
-	perfomance:{
+	performance:{
 		hints: false
 	},
 	devtool: '#eval-source-map',
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			beautify: false,
