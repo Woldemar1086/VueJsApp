@@ -4,8 +4,8 @@ const compressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
 	entry:[
-		path.join(__dirname, '/src/app.js'),
-		'webpack-hot-moddleware/client'
+		'webpack-hot-middleware/client',
+		path.join(__dirname, '/src/app.js')
 	],
 	output:{
 		path: path.resolve(__dirname, './dist'),
@@ -59,7 +59,7 @@ module.exports = {
 			beautify: false,
 			comments: false,
 			compress: {
-				sequenses: true,
+				sequences: true,
 				booleans: true,
 				loops: true,
 				unused: true,
