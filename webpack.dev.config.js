@@ -16,20 +16,19 @@ module.exports = {
 		rules:[
 			{
 				test: /\.vue$/,
-				loader: 'vue-loader',
-				options:{
-					loaders:{
-
-					}
-				}
+				loader: 'vue-loader'
 			},
+			// {
+			// 	test: /\.styl$/,
+			// 	loader: 'stylus-loader'
+			// },
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.jdon$/,
+				test: /\.json$/,
 				loader: 'json-loader',
 			},
 			{
