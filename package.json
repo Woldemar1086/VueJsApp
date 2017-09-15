@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "Woldemar1086 <khodyrev.v.a@gmail.com>",
   "private": true,
+  "engines": {
+    "node": "6.11.2"
+  },
   "scripts": {
     "heroku-postbuild": "npm run build",
     "dev": "cross-env NODE_ENV=development PORT=3000 nodemon --config nodemon.json --watch server --exec babel-node server/index.js",

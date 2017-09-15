@@ -1,6 +1,9 @@
 const path =require('path');
 const webpack = require('webpack');
 const compressionPlugin = require('compression-webpack-plugin');
+// const loaderUtils = require('loader-utils');
+
+// const options = loaderUtils.getOptions(this);
 
 module.exports = {
 	entry:[
@@ -18,10 +21,6 @@ module.exports = {
 				test: /\.vue$/,
 				loader: 'vue-loader'
 			},
-			// {
-			// 	test: /\.styl$/,
-			// 	loader: 'stylus-loader'
-			// },
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
