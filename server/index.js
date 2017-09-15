@@ -1,7 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
-import historyApi from 'connect-history-api-fallback'
 
 import webpack from 'webpack'
 import webpackMiddleware from 'webpack-dev-middleware'
@@ -14,7 +13,6 @@ const port = process.env.PORT || 3000
 const app = express();
 
 
-app.use(historyApi());
 app.use(bodyParser.json());
 app.use('/dist', express.static('dist'));
 
