@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import app from './app.vue'
+import App from './App.vue'
 import { routes } from './system/routes'
 
 Vue.use(VueRouter);
 
-export const router = new VueRouter({
+const router = new VueRouter({
 	mode: 'history',
 	routes
 })
@@ -13,5 +13,5 @@ export const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
-  render: h => h(app)
+  render: h => h(App)
 })
