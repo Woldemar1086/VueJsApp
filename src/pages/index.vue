@@ -1,7 +1,7 @@
 <template>
 	<div class="index">
 		<div>
-		<router-link tag="a" to="vuejs"><h3>Sign up to enter</h3></router-link>
+		<router-link tag="a" to="/vuejs"><h3>Sign up to enter</h3></router-link>
 		</div>
 	</div>
 </template>
@@ -15,11 +15,10 @@
 
 </style>
 <style >
-	html, body{
+html, body{
 	height: 100%;
 	width: 100%;
 	padding: 0;
-	margin: 0;	
+	margin: 0;
 }
-
 </style>
