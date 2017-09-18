@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const compressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
@@ -43,23 +44,28 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
-}
+
+module.exports.devtool = '#source-map'
+module.exports.plugins = (module.exports.plugins || []).concat([
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: '"production"'
+    }
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    sourceMap: true,
+    compress: {
+      warnings: false
+    }
+  }),
+  new webpack.LoaderOptionsPlugin({
+    minimize: true
+  }),
+  new compressionPlugin({
+    asset: "[path].gz[query]",
+    algorithm: "gzip",
+    test: /\.(js|css|html|svg|png)$/,
+    threshold: 10240,
+    minRatio:0.8,
+  })
+])
