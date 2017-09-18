@@ -1,11 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
-
-import webpack from 'webpack'
-import webpackMiddleware from 'webpack-dev-middleware'
-import webpacHotkMiddleware from 'webpack-hot-middleware'
-import devConfig from '../webpack.dev.config'
+import webpackmodule from './webpackmodule'
 
 
 
@@ -16,15 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use('/dist', express.static('dist'));
 
-if(process.env.NODE_ENV === 'development'){
-		const compiler = webpack(devConfig);
-		app.use(webpackMiddleware(compiler,{
-			hot: true,
-			publicPath: devConfig.output.publicPath,
-			noInfo: true
-		}));
-		app.use(webpacHotkMiddleware(compiler));
-}
+webpackmodule(app);
 
 app.get('/*', (req,res)=> {
 	res.sendFile(path.join(__dirname, '../index.html'))

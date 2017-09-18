@@ -1,6 +1,6 @@
 <template>
 	<div>	
-		<header-Menu v-show="currentRoute != '/'"></header-Menu>
+		<header-Menu v-show="currentRoute !== '/'"></header-Menu>
 		<router-view></router-view>
 	</div>
 </template>
