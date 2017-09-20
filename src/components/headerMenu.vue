@@ -1,9 +1,9 @@
 <template>
 	<div class="headerMenu">
-		<div class="logo">
-			<img src="../assets/logo.png"/>
-		</div>
 		<div class="menu">
+			<div class="logo">
+				<img src="../assets/logo.png"/>
+			</div>
 			<router-link class="menuLink" tag="a" to="/"><h3>Home</h3></router-link>
 			<router-link class="menuLink" tag="a" to="/cpp"><h3>C++</h3></router-link>
 			<router-link class="menuLink" tag="a" to="/vuejs"><h3>VUE.js</h3></router-link>
