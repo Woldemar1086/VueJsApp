@@ -1,7 +1,7 @@
 <template>
 	<div class="index">
 		<div>
-		<router-link tag="a" to="/vuejs"><h3>Sign up to enter</h3></router-link>
+		<router-link tag="a" to="/auth"><h3>Sign up to enter</h3></router-link>
 		</div>
 	</div>
 </template>

@@ -7,7 +7,7 @@
 					<input class="signOrloginButton" type="radio" name="tab" id="signUp" checked/>
 					<label for="signUp">Sign up</label>
 					<input class="signOrloginButton" type="radio" name="tab" id="login"/>
-					<label for="login">login</label>
+					<label for="login">Login</label>
 				</div>
 			</div>
 			<div class="authForm">
