@@ -22,7 +22,13 @@
     "cross-env": "^3.2.4",
     "express": "^4.15.4",
     "vue": "^2.4.3",
-    "vue-router": "^2.7.0"
+    "vue-router": "^2.7.0",
+    "vuex": "^2.4.0",
+    "vuex-router-sync": "^4.3.2",
+    "webpack": "^2.7.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.19.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -33,17 +39,27 @@
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.25.0",
     "debug": "^3.0.1",
+    "eslint": "^4.7.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-vue": "^2.1.0",
     "file-loader": "^0.9.0",
+    "morgan": "^1.8.2",
     "nodemon": "^1.12.0",
     "sass-loader": "^6.0.6",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^0.5.9",
     "vue-loader": "^12.2.2",
-    "vue-template-compiler": "^2.4.3",
-    "webpack": "^2.7.0",
-    "webpack-dev-middleware": "^1.12.0",
-    "webpack-dev-server": "^2.4.5",
-    "webpack-hot-middleware": "^2.19.1"
+    "vue-notifications": "^0.8.2",
+    "vue-template-compiler": "^2.4.3"
+  },
+  "eslintConfig": {
+    "extends": "vue",
+    "env": {
+      "node": true
+    },
+    "root": true
   }
 }
