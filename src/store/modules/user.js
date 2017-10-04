@@ -20,8 +20,8 @@ const actions = {
 			.catch((err)=> {
 				console.log(err);
 			})
-		} else {
-			VueNotifications.error({message: 'Your email or password is wrong'})
+		// } else {
+		// 	VueNotifications.error({message: 'Your email or password is wrong'})
 		}
 	}
 }

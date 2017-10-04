@@ -13,18 +13,18 @@
 			<transition :duration="{ enter: 200, leave: 100 }" name="component-fade">
 				<div class="authForm" v-show="showSignForm">
 					<button class="facebookBtn">Continue with Facebook</button>
-					<form @submit.prevent="auth(model)">
+					<form @submit.prevent="submit('reg')">
 						<div class="fieldContainer">
 							<label class="labelFields" for="email">E-mail</label>
-							<input class="authFields" type="email" name="" id="email" required v-model.lazy="model.email">
+							<input class="authFields" type="email" name="" id="email" v-model.lazy="model.email">
 						</div>
 						<div class="fieldContainer">
 							<label class="labelFields" for="password">Password</label>
-							<input class="authFields" type="password" name="" id="password" required v-model.lazy="model.password">
+							<input class="authFields" type="password" name="" id="password" v-model.lazy="model.password">
 						</div>
 						<div class="fieldContainer">
 							<label class="labelFields" for="password">Repeat your password</label>
-							<input class="authFields" type="password" name="" id="passwordRepeat" required v-model.lazy="model.repassword">
+							<input class="authFields" type="password" name="" id="passwordRepeat" v-model.lazy="model.repassword">
 						</div>
 						<div class="authBtnContainer">
 							<button class="authBtn" type="submit">Sign up</button>
@@ -36,14 +36,14 @@
 			</transition>
 			<transition :duration="{ enter: 200, leave: 100 }" name="component-fade">
 				<div class="authForm" v-show="showLogForm">
-					<form @submit.prevent="auth(model)">
+					<form @submit.prevent="submit()">
 						<div class="fieldContainer">
 							<label class="labelFields" for="email">E-mail</label>
-							<input class="authFields" type="email" name="" id="emaillog" required v-model.lazy="model.email">
+							<input class="authFields" type="email" name="" id="emaillog" v-model.lazy="model.email">
 						</div>
 						<div class="fieldContainer">
 							<label class="labelFields" for="password">Password</label>
-							<input class="authFields" type="password" name="" id="passwordlog" required v-model.lazy="model.password">
+							<input class="authFields" type="password" name="" id="passwordlog" v-model.lazy="model.password">
 						</div>
 						<div class="authBtnContainer">
 							<button class="authBtn" type="submit">Login</button>
@@ -60,6 +60,7 @@
 
 <script>
 import { mapActions } from 'vuex';
+import valid from '../system/validators'
 
 export default {
 	data(){
@@ -69,7 +70,7 @@ export default {
 			model:{
 				email:'',
 				password: '',
-				repassword: null,
+				repassword: '',
 			}
 		}
 	},
@@ -87,6 +88,12 @@ export default {
 				break;
 				default:
 				break;
+			}
+		},
+		submit(key){
+			if(valid(this.model, key).isValid){
+				this.auth(this.model)
+				console.log(valid(this.model).isValid)
 			}
 		}
 	}
