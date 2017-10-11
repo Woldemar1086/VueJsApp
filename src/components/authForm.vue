@@ -103,16 +103,7 @@ export default {
 				console.log(validObj.isValid)
 			} else {
 				let group = 'auth-notification'
-				let errorText = '';
-				if (validObj.errors.email.status === 1){
-					errorText = validObj.errors.email.text;
-				} else if (validObj.errors.password.status === 1){
-					errorText = validObj.errors.password.text;
-				} else if (validObj.errors.repassword.status === 1){
-					errorText = validObj.errors.repassword.text;
-				} else if (validObj.errors.coparePass.status === 1){
-					errorText = validObj.errors.coparePass.text;
-				} 
+				let errorText = validObj.errors;
 				// let animation = {
 				// 	enter (element) {
 				// 		 /*
@@ -132,11 +123,13 @@ export default {
 				// 		opacity: 0
 				// 	}
 				// }
-				this.$notify({group,
-					type: 'error',
-					title: 'Important message',
-					text: errorText,
-				});
+				if(validObj.errors != null){
+					this.$notify({group,
+						type: 'error',
+						title: 'Important message',
+						text: errorText,
+					});
+				}
 			}
 		}
 	}
