@@ -1,4 +1,3 @@
-import VueNotifications from 'vue-notifications'
 import miniToastr from 'mini-toastr'
 
 

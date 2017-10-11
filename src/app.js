@@ -1,14 +1,15 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import { sync } from 'vuex-router-sync'
-import App from './App.vue';
-import vueNotifications from 'vue-notifications'
-import options from './system/options'
-import { routes } from './system/routes';
-import store from './store/indexStore';
+import Vue 			 from 'vue';
+import VueRouter 	 from 'vue-router';
+import { sync } 	 from 'vuex-router-sync'
+import App 			 from './App.vue';
+import { routes } 	 from './system/routes';
+import store 		 from './store/indexStore';
+import Notifications from 'vue-notification'
+import velocity      from 'velocity-animate'
 
 Vue.use(VueRouter);
-Vue.use(vueNotifications, options);
+Vue.use(Notifications, { velocity })
+
 
 
 export var router = new VueRouter({
