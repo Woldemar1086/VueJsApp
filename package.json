@@ -12,7 +12,8 @@
     "dev": "cross-env NODE_ENV=development PORT=4000 DEBUG=server:* nodemon --config nodemon.json --watch server --exec babel-node server/index.js",
     "start": "cross-env PORT=3000 & babel-node server/index.js",
     "build": "webpack --progress --hide-modules",
-    "config": "heroku config:set NPM_CONFIG_PRODUCTION=false"
+    "config": "heroku config:set NPM_CONFIG_PRODUCTION=false",
+    "test": "babel-node spec/run.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -51,6 +52,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-vue": "^2.1.0",
     "file-loader": "^0.9.0",
+    "jasmine": "^2.8.0",
     "lodash": "^4.17.4",
     "morgan": "^1.8.2",
     "nodemon": "^1.12.0",
@@ -64,7 +66,8 @@
   "eslintConfig": {
     "extends": "vue",
     "env": {
-      "node": true
+      "node": true,
+      "jasmine":true
     },
     "root": true
   }
