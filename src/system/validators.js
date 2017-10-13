@@ -13,7 +13,12 @@ export default (model, key) => {
 		errors = 'Write your password';
 		//VueNotification.error({message: 'Write your password'})
 	}
+
 	if(key === 'reg'){
+		if(!Validator.isLength(model.password, {min: 8, max: undefined})){
+			errors = 'Your password is too short. It should be longer than 8 symbols.';
+		}
+
 		if(isEmpty(model.repassword)){
 			errors = 'Repeate your password';
 			//VueNotification.error({message: 'Repeate your password'})
