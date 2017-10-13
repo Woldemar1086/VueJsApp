@@ -103,7 +103,7 @@ export default {
 				console.log(validObj.isValid)
 			} else {
 				let group = 'auth-notification'
-				let errorText = validObj.errors;
+				let errors = validObj.errors;
 				// let animation = {
 				// 	enter (element) {
 				// 		 /*
@@ -124,11 +124,13 @@ export default {
 				// 	}
 				// }
 				if(validObj.errors != null){
-					this.$notify({group,
-						type: 'error',
-						title: 'Important message',
-						text: errorText,
-					});
+					for(let err in errors){
+						this.$notify({group,
+							type: 'error',
+							title: 'Important message',
+							text: errors[err],
+						});
+					}
 				}
 			}
 		}
