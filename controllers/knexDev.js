@@ -1,5 +1,6 @@
 import dBase from './base.server';
 import knex from 'knex';
+import herokuDev from './heroku.dev'
 
 const knexConfig = {
 	client:'pg',
