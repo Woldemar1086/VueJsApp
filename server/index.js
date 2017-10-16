@@ -8,6 +8,7 @@ import morgan from 'morgan'
 import session from 'express-session';
 import connectSessionKnex from 'connect-session-knex';
 import db from '../controllers/knexDev';
+import history from 'connect-history-api-fallback';
 
 
 const sessionStore = connectSessionKnex(session);
@@ -23,6 +24,8 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(morgan('dev'))
+//app.use(history());
+
 app.use('/dist', express.static('dist'));
 app.use(session({
 	secret: 'secret',

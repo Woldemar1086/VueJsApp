@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpacHotkMiddleware from 'webpack-hot-middleware';
-import devConfig from '../webpack.dev.config';
+import devConfig from '../build/webpack.dev.config';
 
 export default (app) => {
     if (process.env.NODE_ENV === 'development') {
